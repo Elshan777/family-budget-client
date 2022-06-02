@@ -1,0 +1,19 @@
+<h2 class="display-2 my-3">My entries</h2>
+<p><a class="btn btn-primary" href="#" routerLink="/entries/new" role="button">New entry</a></p>
+
+<div class="list-group">
+  <a *ngFor="let entry of entries"
+    class="list-group-item list-group-item-action"
+    [routerLink]="['/entries', entry.id]"
+  >
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <h5 class="mb-1">{{ entry.title }}</h5>
+    </div>
+    <p class="mb-1">
+      {{ entry.amount }}
+    </p>
+    <small>
+      <i class="fas fa-map-marker-alt"></i> {{ entry.category }}
+    </small>
+  </a>
+</div>

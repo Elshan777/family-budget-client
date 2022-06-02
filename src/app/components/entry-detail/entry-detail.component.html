@@ -1,0 +1,16 @@
+<h2 class="display-2 my-3">Details</h2>
+<dl class="row">
+  <dt class="col-sm-3">Title</dt>
+  <dd class="col-sm-9">{{ entry.title }}</dd>
+
+  <dt class="col-sm-3">Amount</dt>
+  <dd class="col-sm-9">{{ entry.amount }}</dd>
+
+  <dt class="col-sm-3">Category</dt>
+  <dd class="col-sm-9">{{ entry.category }}</dd>
+</dl>
+
+<p>
+  <a class="btn btn-primary" role="button" [routerLink]="['/entries', entry.id, 'edit']">Edit</a>
+  <a class="btn btn-outline-danger" (click)="onDeleteClick()" role="button">Delete</a>
+</p>
