@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Entry } from 'src/app/entry';
+import { EntryService } from 'src/app/entry.service';
 
 @Component({
   selector: 'app-entry-edit',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryEditComponent implements OnInit {
 
-  constructor() { }
+  public entry: Entry;
 
-  ngOnInit(): void {
+  constructor(
+    private entryService: EntryService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  public ngOnInit(): void {
+    let id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.entryService.get(id).subscribe((data: Entry) => {
+      this.entry = data;
+    });
+  }
+
+  public onSave(entry: Entry): void {
+    this.entryService.update(entry.id, entry).subscribe(() => {
+      this.router.navigate(['/entries']);
+    });
   }
 
 }

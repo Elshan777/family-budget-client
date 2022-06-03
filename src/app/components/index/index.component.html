@@ -1,8 +1,15 @@
 <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-4">Family Budget</h1>
-      <p class="lead">Add new entries</p>
-      <p><a class="btn btn-primary" href="#" role="button" routerLink="/entries/new">New Entry</a></p>
-    </div>
+  <div class="container">
+    <h1 class="display-4">Family Budget</h1>
+    <h2 class="display-6">Income ${{income}}</h2>
+    <h2 class="display-6">Outcome ${{outcome}}</h2>
+    <h2 class="display-6">Remaining ${{income+outcome}}</h2>
+    <img src="../../../assets/family.jpg" alt="family" height="300">
+    <br><br><br>
+    <p class="lead">Add new entries</p>
+    <p>
+      <a class="btn btn-primary" href="#" role="button" routerLink="/entries/new">New Entry</a>
+    </p>
   </div>
+</div>
   

@@ -21,7 +21,7 @@ export class EntryFormComponent implements OnInit, OnChanges {
     this.entryForm = this.formBuilder.group({
       id: [ this.entry?.id ],
       title: [ this.entry?.title, [ Validators.required ]],
-      amount: [this.entry?.amount, [Validators.min(0)] ],
+      amount: [this.entry?.amount ],
       category: [ this.entry?.category, [ Validators.required]]
     });
   }
@@ -30,7 +30,7 @@ export class EntryFormComponent implements OnInit, OnChanges {
     this.entryForm = this.formBuilder.group({
       id: [ this.entry?.id ],
       title: [ this.entry?.title, [ Validators.required ]],
-      amount: [this.entry?.amount, [Validators.min(0)] ],
+      amount: [this.entry?.amount ],
       category: [ this.entry?.category, [ Validators.required]]
     });
   }
